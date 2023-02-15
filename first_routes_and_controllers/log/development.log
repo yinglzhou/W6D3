@@ -1,2 +1,63 @@
   [1m[35m (407.5ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_development" ENCODING = 'unicode'[0m
   [1m[35m (129.1ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_test" ENCODING = 'unicode'[0m
+Started GET "/" for ::1 at 2023-02-15 15:33:15 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kellyzhou/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kellyzhou/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.5ms | Allocations: 527)
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 2801)
+
+
+Started GET "/" for ::1 at 2023-02-15 15:36:23 -0500
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/kellyzhou/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kellyzhou/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.7ms | Allocations: 278)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 956)
+
+
+Started GET "/" for ::1 at 2023-02-15 15:36:47 -0500
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/kellyzhou/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kellyzhou/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 223)
+
+
+Started GET "/" for ::1 at 2023-02-15 15:36:53 -0500
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/kellyzhou/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kellyzhou/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 16)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 207)
+
+
+Started GET "/users" for ::1 at 2023-02-15 15:39:13 -0500
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+
+Started GET "/users" for ::1 at 2023-02-15 15:39:46 -0500
+Processing by UsersController#index as */*
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 225)
+
+
+Started GET "/" for ::1 at 2023-02-15 15:44:00 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kellyzhou/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kellyzhou/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 293)
+
+
+Started GET "/users" for ::1 at 2023-02-15 15:44:04 -0500
+Processing by UsersController#index as HTML
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.0ms | Allocations: 652)
+
+
+
+ActionController::MissingExactTemplate - UsersController#index is missing a template for request formats: text/html:
+
+Started POST "/__better_errors/9c84f034ba08f92d/variables" for ::1 at 2023-02-15 15:44:05 -0500
+Started GET "/users" for ::1 at 2023-02-15 15:45:31 -0500
+Processing by UsersController#index as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 9)
+Completed 200 OK in 6ms (Views: 5.5ms | Allocations: 532)
+
+
