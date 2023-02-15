@@ -61,3 +61,103 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 6ms (Views: 5.5ms | Allocations: 532)
 
 
+Started GET "/users?fav_food=pizza" for ::1 at 2023-02-15 16:09:18 -0500
+
+ActiveRecord::NoDatabaseError - We could not find your database: first_routes_and_controllers_development. Which can be found in the database configuration file located at config/database.yml.
+To resolve this issue:
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+To create your database, run:
+        bin/rails db:create:
+
+  [1m[35m (84.8ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_development" ENCODING = 'unicode'[0m
+  [1m[35m (71.2ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_test" ENCODING = 'unicode'[0m
+Started GET "/users?fav_food=pizza" for ::1 at 2023-02-15 16:11:37 -0500
+Processing by UsersController#index as */*
+  Parameters: {"fav_food"=>"pizza"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 1392)
+
+
+Started POST "/users" for ::1 at 2023-02-15 16:13:57 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+Started POST "/users:id" for ::1 at 2023-02-15 16:15:45 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users:id"):
+  
+Started POST "/users/:id" for ::1 at 2023-02-15 16:16:06 -0500
+
+AbstractController::ActionNotFound - The action 'create' could not be found for UsersController:
+
+Started GET "/users/:id" for ::1 at 2023-02-15 16:17:01 -0500
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started POST "/__better_errors/ef72a0ba1e28ed6e/variables" for ::1 at 2023-02-15 16:17:01 -0500
+Started POST "/users/:id" for ::1 at 2023-02-15 16:17:25 -0500
+Processing by UsersController#create as */*
+  Parameters: {"id"=>":id"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 243)
+
+
+Started GET "/users/:id" for ::1 at 2023-02-15 16:17:35 -0500
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started POST "/__better_errors/0f99fec839e231d9/variables" for ::1 at 2023-02-15 16:17:35 -0500
+Started GET "/users_/:id" for ::1 at 2023-02-15 16:19:26 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users_/:id"):
+  
+Started GET "/rails/info/routes?path=new" for ::1 at 2023-02-15 16:19:27 -0500
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"new"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 614)
+
+
+Started GET "/user/:id" for ::1 at 2023-02-15 16:20:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/user/:id"):
+  
+Started GET "/user/:id" for ::1 at 2023-02-15 16:20:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/user/:id"):
+  
+Started GET "/users/:id" for ::1 at 2023-02-15 16:20:26 -0500
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started POST "/__better_errors/96175245f4dd2b4e/variables" for ::1 at 2023-02-15 16:20:26 -0500
+Started GET "/users/:2" for ::1 at 2023-02-15 16:26:40 -0500
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started GET "/users/:2" for ::1 at 2023-02-15 16:27:31 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>":2"}
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 203)
+
+
+Started GET "/users?some_category[a_key]=[FILTERED]&some_category[a_second_key]=[FILTERED]&some_category[inner_inner_hash][key]=value&something_else=aaahhhhh%27" for ::1 at 2023-02-15 16:32:14 -0500
+Processing by UsersController#index as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]", "inner_inner_hash"=>{"key"=>"value"}}, "something_else"=>"aaahhhhh'"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 1.3ms | Allocations: 403)
+
+
+Started GET "/users/users?some_category[a_key]=[FILTERED]&some_category[a_second_key]=[FILTERED]&some_category[inner_inner_hash][key]=value&something_else=aaahhhhh%27" for ::1 at 2023-02-15 16:33:31 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]", "inner_inner_hash"=>{"key"=>"value"}}, "something_else"=>"aaahhhhh'", "id"=>"users"}
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 188)
+
+
+Started GET "/users/users?some_category[a_key]=[FILTERED]&some_category[a_second_key]=[FILTERED]&some_category[inner_inner_hash][key]=value&something_else=aaahhhhh%27" for ::1 at 2023-02-15 16:33:52 -0500
+Processing by UsersController#show as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]", "inner_inner_hash"=>{"key"=>"value"}}, "something_else"=>"aaahhhhh'", "id"=>"users"}
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 156)
+
+
