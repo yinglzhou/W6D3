@@ -11,7 +11,7 @@ class ArtworkSharesController < ApplicationController
   def destroy
     @artwork_share = ArtworkShare.find(params[:id])
     if @artwork_share.destroy
-      render json: "Artwork destroyed"
+      render json: "Artwork_share destroyed"
     else
       render json: @artwork_share.full_messages, status: 422
     end
@@ -20,6 +20,6 @@ class ArtworkSharesController < ApplicationController
   private
 
   def artwork_share_params
-    params.require(:artwork_share).permit(:artist_id, :viewer_id)
+    params.require(:artwork_share).permit(:artwork_id, :viewer_id)
   end
 end
