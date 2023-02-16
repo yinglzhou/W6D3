@@ -1263,3 +1263,209 @@ Processing by UsersController#index as */*
 Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 1084)
 
 
+Started POST "/users/8?user[username]=smallbrainmilner" for ::1 at 2023-02-16 14:37:17 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/8"):
+  
+Started POST "/users/8/?user[username]=smallbrainmilner" for ::1 at 2023-02-16 14:37:40 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/8"):
+  
+Started POST "/users/9?user[username]=smallbrainmilner" for ::1 at 2023-02-16 14:37:45 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/9"):
+  
+Started POST "/users/8?user[username]=smallbrainmilner" for ::1 at 2023-02-16 14:38:01 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/8"):
+  
+Started GET "/users" for ::1 at 2023-02-16 14:38:31 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 5.6ms | Allocations: 7080)
+
+
+Started POST "/users/6?users[username]=smallbrain" for ::1 at 2023-02-16 14:39:18 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/6"):
+  
+Started POST "/users/6?user[username]=smallbrain" for ::1 at 2023-02-16 14:39:38 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/6"):
+  
+Started POST "/users/6?user[username]=smallbrain" for ::1 at 2023-02-16 14:40:35 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users/6"):
+  
+Started POST "/users/?user[username]=smallbrain" for ::1 at 2023-02-16 14:53:43 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"smallbrain"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "smallbrain"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "username") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2023-02-16 19:53:43.908326"], ["updated_at", "2023-02-16 19:53:43.908326"], ["username", "smallbrain"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 201 Created in 44ms (Views: 0.4ms | ActiveRecord: 14.4ms | Allocations: 15906)
+
+
+Started POST "/users/?user[username]=small" for ::1 at 2023-02-16 14:55:35 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"small"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "small"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "username") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2023-02-16 19:55:35.565281"], ["updated_at", "2023-02-16 19:55:35.565281"], ["username", "small"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 201 Created in 17ms (Views: 0.3ms | ActiveRecord: 5.1ms | Allocations: 6349)
+
+
+Started DELETE "/users/10" for ::1 at 2023-02-16 14:55:55 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 10]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 3.1ms | Allocations: 15159)
+
+
+
+ActiveRecord::StatementInvalid - PG::UndefinedColumn: ERROR:  column artwork_shares.viewers_id does not exist
+LINE 1: ...CT "artwork_shares".* FROM "artwork_shares" WHERE "artwork_s...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "artwork_shares.viewer_id".:
+  app/controllers/users_controller.rb:34:in `destroy'
+
+Started GET "/users" for ::1 at 2023-02-16 14:56:13 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 1443)
+
+
+Started DELETE "/users/10" for ::1 at 2023-02-16 14:56:23 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 10]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.2ms | Allocations: 4124)
+
+
+
+ActiveRecord::StatementInvalid - PG::UndefinedColumn: ERROR:  column artwork_shares.viewers_id does not exist
+LINE 1: ...CT "artwork_shares".* FROM "artwork_shares" WHERE "artwork_s...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "artwork_shares.viewer_id".:
+  app/controllers/users_controller.rb:34:in `destroy'
+
+Started DELETE "/users/9" for ::1 at 2023-02-16 14:57:49 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 9]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.1ms | Allocations: 4002)
+
+
+
+ActiveRecord::StatementInvalid - PG::UndefinedColumn: ERROR:  column artwork_shares.viewers_id does not exist
+LINE 1: ...CT "artwork_shares".* FROM "artwork_shares" WHERE "artwork_s...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "artwork_shares.viewer_id".:
+  app/controllers/users_controller.rb:34:in `destroy'
+
+Started GET "/users/9" for ::1 at 2023-02-16 14:58:51 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 625)
+
+
+Started DELETE "/users/9" for ::1 at 2023-02-16 14:59:00 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 9]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.1ms | Allocations: 4018)
+
+
+
+ActiveRecord::StatementInvalid - PG::UndefinedColumn: ERROR:  column artwork_shares.viewers_id does not exist
+LINE 1: ...CT "artwork_shares".* FROM "artwork_shares" WHERE "artwork_s...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "artwork_shares.viewer_id".:
+  app/controllers/users_controller.rb:34:in `destroy'
+
+Started DELETE "/users/9" for ::1 at 2023-02-16 15:00:09 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 9]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mUser Destroy (1.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+Completed 200 OK in 27ms (Views: 0.2ms | ActiveRecord: 9.0ms | Allocations: 11027)
+
+
+Started DELETE "/users/10" for ::1 at 2023-02-16 15:00:26 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 10]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mUser Destroy (1.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 4.6ms | Allocations: 2875)
+
+
+Started GET "/users/" for ::1 at 2023-02-16 15:00:31 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 2.8ms | Allocations: 1168)
+
+
+Started GET "/artworks" for ::1 at 2023-02-16 15:01:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/artworks"):
+  
