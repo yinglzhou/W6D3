@@ -17,6 +17,6 @@ class ArtworkShare < ApplicationRecord
     class_name: :Artwork
 
   belongs_to :viewers,
-             foreign_key: :viewer_id,
-             class_name: :User
+    foreign_key: :viewer_id,
+    class_name: :User
 end
