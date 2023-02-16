@@ -5,12 +5,12 @@ class ArtworksController < ApplicationController
     end
 
     def create
-        @artworks = Artwork.new(artwork_params)
-        if @artworks.save
+        @artwork = Artwork.new(artwork_params)
+        if @artwork.save
             render json: @artwork, status: :created
 
         else
-            render json: artwork.errors.full_messages, status: 422
+            render json: @artwork.errors.full_messages, status: 422
         end
     end
 
@@ -34,10 +34,11 @@ class ArtworksController < ApplicationController
             render json: "Artwork destroyed"
         else
             render json: @artwork.full_messages, status: 422
+        end
     end
 
     private
     def artwork_params
-        params.require(:artwork).permit(:title, :image_url, :artwork_id)
+        params.require(:artwork).permit(:title, :image_url, :artist_id)
     end
 end
